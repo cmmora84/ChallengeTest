@@ -28,13 +28,5 @@ namespace Challenger_Test.Controllers
 			return View();
 		}
 
-		public async Task<string> GetEmployee()
-		{
-
-			var httpClient = new HttpClient();
-			var json = await httpClient.GetStringAsync("http://masglobaltestapi.azurewebsites.net/api/Employees");
-
-			return View();
-		}
 	}
 }
