@@ -1,0 +1,31 @@
+﻿@model List<Challenge.Models.Empleado>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Title.</h2>
+
+<table class="table">
+	<tr>
+		<td>Id Employee</td>
+		<td>Name</td>
+		<td>Contract Type</td>
+		<td>Role</td>
+		<td>Hourly Salary</td>
+		<td>Monthly Salary</td>
+	</tr>
+
+	@foreach (var empleado in Model)
+	{
+		<tr>
+			<td>@empleado.id</td>
+			<td>@empleado.name </td>
+			<td>@empleado.contractTypeName </td>
+			<td>@empleado.roleName </td>
+			<td>@empleado.hourlySalary </td>
+			<td>@empleado.monthlySalary </td>
+		</tr>
+
+	}
+
+</table>
