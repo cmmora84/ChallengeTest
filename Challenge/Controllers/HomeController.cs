@@ -13,7 +13,7 @@ namespace Challenge.Controllers
 {
 	public class HomeController : Controller
 	{
-		public async Task<ActionResult> Index()
+		public async Task<ActionResult> Index(string buscar)
 		{
 
 			/*
@@ -31,6 +31,12 @@ namespace Challenge.Controllers
 			var empleadosService = new EmpleadosService();
 
 			var EmpleadosListaFinal = empleadosService.ObtenerResultados(EmpleadosListaAPI);
+
+			// Filtramos el resultado por el 'texto de búqueda'
+			if (!string.IsNullOrEmpty(buscar))
+			{
+				EmpleadosListaFinal = EmpleadosListaFinal.Where(x => x.id.Contains(buscar)).ToList();
+			}
 
 			return View(EmpleadosListaFinal);
 		}
