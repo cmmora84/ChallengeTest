@@ -1,31 +1,47 @@
 ﻿@model List<Challenge.Models.Empleado>
 
 @{
-	ViewBag.Title = "Home Page";
+	ViewBag.Title = "Challenge Test";
 }
 <h2>@ViewBag.Title.</h2>
+<div class="row">
+	<div class="col-md-4">
+		<h2>Buscador</h2>
+		<div style="float: left; margin-right: 10px;">Id Employee:</div>
+		<div style="float: left; margin-right: 10px;">
+			<input type="text" />
+		</div>
+		<div style="float: left; margin-right: 10px;">
+			<button value="Find" title="Find">Find</button>
+		</div>
+	</div>
+</div>
+
+<hr/>
 
 <table class="table">
-	<tr>
-		<td>Id Employee</td>
-		<td>Name</td>
-		<td>Contract Type</td>
-		<td>Role</td>
-		<td>Hourly Salary</td>
-		<td>Monthly Salary</td>
-	</tr>
-
-	@foreach (var empleado in Model)
-	{
+	<thead>
 		<tr>
-			<td>@empleado.id</td>
-			<td>@empleado.name </td>
-			<td>@empleado.contractTypeName </td>
-			<td>@empleado.roleName </td>
-			<td>@empleado.hourlySalary </td>
-			<td>@empleado.monthlySalary </td>
+			<th>Id Employee</th>
+			<th>Name</th>
+			<th>Role</th>
+			<th>Contract Type</th>
+			<th>Anual Salary</th>
 		</tr>
+	</thead>
+	<tbody>
 
-	}
+		@foreach (var empleado in Model)
+		{
+			<tr>
+				<td>@empleado.id</td>
+				<td>@empleado.name </td>
+				<td>@empleado.roleName </td>
+				<td>@empleado.contractTypeName </td>
+				<td>@empleado.annualSalary.ToString() </td>
+			</tr>
+
+		}
+	</tbody>
 
 </table>

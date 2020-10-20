@@ -14,8 +14,9 @@ namespace Challenge.Models
 		public string roleId { get; set; }
 		public string roleName { get; set; }
 		public string roleDescription { get; set; }
-		public string hourlySalary { get; set; }
-		public string monthlySalary { get; set; }
+		public decimal hourlySalary { get; set; }
+		public decimal monthlySalary { get; set; }
+		public decimal annualSalary { get; set; }
 
 	}
 }
